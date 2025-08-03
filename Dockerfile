@@ -6,8 +6,6 @@ WORKDIR /app
 
 RUN git clone https://github.com/getsentry/self-hosted.git . && git checkout master
 
-RUN ./install.sh --minimal
+RUN yes | ./install.sh
 
 EXPOSE 9000
-
-CMD ["docker-compose", "up", "--wait"]
