@@ -4,10 +4,9 @@ RUN apk add --no-cache bash curl git docker-compose
 
 WORKDIR /app
 
-RUN git clone https://github.com/getsentry/self-hosted.git . && \
-    git checkout master
+RUN git clone https://github.com/getsentry/self-hosted.git . && git checkout master
 
-RUN ./install.sh --skip-user-setup
+RUN ./install.sh --minimal
 
 EXPOSE 9000
 
